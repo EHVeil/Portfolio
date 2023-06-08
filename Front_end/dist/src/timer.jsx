@@ -11,14 +11,16 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
-        Timer
-      </div>
-      <div>
-        <form>
-          <input placeholder="Category"> </input>
-          <input placeholder="Activity"> </input>
-          <input placeholder="Notes"> </input>
-        </form>
+        <div>
+          Start
+        </div>
+        <div>
+          <form>
+            <input placeholder="Category"></input>
+            <input placeholder="Activity"></input>
+            <input placeholder="Notes"></input>
+          </form>
+        </div>
       </div>
     )
   }
