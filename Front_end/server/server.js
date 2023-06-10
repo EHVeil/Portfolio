@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/../dist'));
 
 
 app.get('/', (req, res) => {
-  res.send();
+  res.send('Hello world');
 })
 
 app.listen(port, () => {
