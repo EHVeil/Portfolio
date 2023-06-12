@@ -8,7 +8,7 @@ import Timer from './Timer.jsx';
 import Sessions from './sessions.jsx';
 
 const container = document.getElementById('root');
-const root = createRoot(container);
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +34,7 @@ class App extends React.Component {
   }
 }
 
-root.render(<App />);
+//if props must be passed to app make sure they are passed both here and in server.js
+ReactDOM.hydrate(<App />, container);
 
 export default App;
