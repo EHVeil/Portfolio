@@ -8,10 +8,10 @@ function SessionPopup(props) {
       <input placeholder="Activity"></input>
       <input placeholder="Length"></input>
       <div>
-        <span className="saveButton">
+        <span className="button">
           Save
         </span>
-        <span className="cancelButton">
+        <span className="button">
           Cancel
         </span>
       </div>

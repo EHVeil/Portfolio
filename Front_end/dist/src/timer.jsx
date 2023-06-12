@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavButton from './navButton.jsx';
 
 class Timer extends React.Component {
   constructor(props){
@@ -12,6 +13,7 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
+        <NavButton />
         <div>
           Start
         </div>
