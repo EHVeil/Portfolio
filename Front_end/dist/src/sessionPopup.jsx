@@ -2,7 +2,7 @@ import React from 'react';
 
 function SessionPopup(props) {
   return (
-    <form>
+    <form className="popup">
       <input placeholder="Name"></input>
       <input placeholder="Category"></input>
       <input placeholder="Activity"></input>

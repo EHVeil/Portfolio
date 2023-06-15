@@ -1,7 +1,7 @@
 import React from 'react';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import{ createRoot } from 'react-dom/client';
+import{ createRoot, hydrateRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 //Components
 import Timer from './Timer.jsx';
@@ -9,6 +9,7 @@ import Sessions from './sessions.jsx';
 import StatisticsView from './statistics.jsx';
 
 const container = document.getElementById('root');
+const root = createRoot(container);
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,6 @@ class App extends React.Component {
 }
 
 //if props must be passed to app make sure they are passed both here and in server.js
-ReactDOM.hydrate(<App />, container);
+root.render(<App />);
 
 export default App;

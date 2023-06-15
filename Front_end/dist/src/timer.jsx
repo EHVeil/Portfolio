@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import NavButton from './navButton.jsx';
 
 class Timer extends React.Component {
@@ -24,7 +23,6 @@ class Timer extends React.Component {
             <input placeholder="Notes"></input>
           </form>
         </div>
-        <Link to="/sessions">sessions</Link>
       </div>
     )
   }

@@ -12,12 +12,11 @@ app.get('*', (req, res) => {
     <html lang="en">
       <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <title>10,000 Hours</title>
       </head>
       <body>
-        <main id="root"></main>
+        <div id="root"></div>
         <script src="./main.js"></script>
       </body>
     </html>
