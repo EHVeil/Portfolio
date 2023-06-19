@@ -3,7 +3,7 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 //Components
-import Timer from './Timer.jsx';
+import SessionTimer from './sessionTimer.jsx';
 import Sessions from './sessions.jsx';
 import StatisticsView from './statistics.jsx';
 
