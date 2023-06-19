@@ -10,7 +10,7 @@ import StatisticsView from './statistics.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Timer />,
+    element: <SessionTimer />,
   },
   {
     path: "/sessions",
