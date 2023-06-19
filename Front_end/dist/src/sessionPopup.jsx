@@ -11,7 +11,7 @@ function SessionPopup(props) {
         <span className="button">
           Save
         </span>
-        <span className="button">
+        <span className="button" onClick={props.handleSession}>
           Cancel
         </span>
       </div>
