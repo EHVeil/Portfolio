@@ -6,11 +6,16 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import SessionTimer from './sessionTimer.jsx';
 import Sessions from './sessions.jsx';
 import StatisticsView from './statistics.jsx';
+import Login from './login.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SessionTimer />,
+    element: <Login />,
+  },
+  {
+    path: "/timer",
+    element: <SessionTimer />
   },
   {
     path: "/sessions",
