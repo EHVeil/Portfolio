@@ -12,6 +12,8 @@ class StatisticsView extends React.Component {
       <div>
         <NavButton />
         StatisticsView
+        <div>Graph</div>
+        <div>Filters</div>
       </div>
     )
   }
