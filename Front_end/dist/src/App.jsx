@@ -27,6 +27,8 @@ const router = createBrowserRouter([
   }
 ])
 
+//create a handler for the login, once the user has logged in successfully provide a session cookie etc and provide the user id to the app state.
+
 class App extends React.Component {
   constructor(props) {
     super(props);
