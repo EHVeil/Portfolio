@@ -1,6 +1,7 @@
 import React from 'react';
 import SessionPopup from './sessionPopup.jsx';
 import NavButton from './navButton.jsx';
+import SessionTile from './sessionTile.jsx';
 
 class Sessions extends React.Component {
   constructor(props) {
@@ -26,7 +27,9 @@ class Sessions extends React.Component {
         the state variable will be controlled by the add session button
         set the css so the modal is indeed a popup. */}
         {this.state.popup ? <SessionPopup handleSession={this.handleSession} /> : null}
-        Sessions
+        {/* users will be able to click the session tile to view the full session tile including notes etc
+        they will also have the option to edit the session notes while in this view */}
+        <SessionTile />
       </div>
     )
   }
