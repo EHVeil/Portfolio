@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 3000;
-const client = require('./mongod.js');
+const client = require('./mongo.js');
 
 app.use(express.static(__dirname + '/../dist'));
 
