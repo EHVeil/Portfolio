@@ -22,10 +22,20 @@ app.get('*', (req, res) => {
       </body>
     </html>
   `);
-})
+});
 
+app.get('/sessions', (req, res) => {
+  //retrieve all the sessions from a given user and send the sessions back to the client to be rendered in the sessions view.
+  console.log('sessions get');
+});
+
+app.post('/sessions', (req, res) => {
+  //save any sessions created by the user.
+  //perhaps send over a flag that distinguishes sessions created in the timer and sessions created in the editor.
+  console.log('sessions post');
+});
 
 
 app.listen(port, () => {
   console.log(`Express server port ${port}`);
-})
+});

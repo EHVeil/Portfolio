@@ -12,20 +12,20 @@ class Sessions extends React.Component {
     this.handleSession = this.handleSession.bind(this);
   }
 
-  handleSession() {
+  handleSession(e) {
+    console.log(e.target);
     this.setState(pState => {
+      //toggles the popup
       return { popup: !pState.popup }
     })
   }
+
   render() {
     //once the add session button is pressed then a pop up with the session creater form should appear.
     return (
       <div>
           <NavButton />
           <span onClick={this.handleSession}>Add Session Button</span>
-
-
-
         {/* the session editor modal will go here as a conditional render based on a state variable. th
         the state variable will be controlled by the add session button
         set the css so the modal is indeed a popup. */}
