@@ -33,6 +33,7 @@ app.post('/sessions', (req, res) => {
   //save any sessions created by the user.
   //perhaps send over a flag that distinguishes sessions created in the timer and sessions created in the editor.
   console.log('sessions post');
+  res.send('session posted');
 });
 
 

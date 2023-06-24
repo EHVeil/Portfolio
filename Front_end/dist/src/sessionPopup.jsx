@@ -9,7 +9,7 @@ function SessionPopup(props) {
         <input placeholder="Activity" data-forminput="activity" value={props.inputs.activity} onChange={props.handleForm}></input>
         <input placeholder="Length" data-forminput="length" value={props.inputs.length} onChange={props.handleForm}></input>
         <input type="button" value="Save" className="button" onClick={props.handleSubmit} />
-        <input type="button" value="Cancel" className="button" onClick={props.handleSession} />
+        <input type="button" value="Cancel" className="button" onClick={props.handlePopup} />
       </form>
     </div>
   )

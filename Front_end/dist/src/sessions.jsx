@@ -2,6 +2,7 @@ import React from 'react';
 import SessionPopup from './sessionPopup.jsx';
 import NavButton from './navButton.jsx';
 import SessionTile from './sessionTile.jsx';
+import axios from 'axios';
 
 class Sessions extends React.Component {
   constructor(props) {
@@ -11,15 +12,16 @@ class Sessions extends React.Component {
       date: '',
       category: '',
       activity: '',
-      length: ''
+      length: '',
+      sessions: []
     }
-    this.handleSession = this.handleSession.bind(this);
+    this.handlePopup = this.handlePopup.bind(this);
     this.handleForm = this.handleForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
-  handleSession(e) {
+  handlePopup(e) {
     this.setState(pState => {
       //toggles the popup
       return { popup: !pState.popup }
@@ -37,20 +39,33 @@ class Sessions extends React.Component {
   }
 
   handleForm(e) {
+    //each form input has an identifying string in its dataset
     let formInput = e.target.dataset.forminput;
+    //the value of the targeted input
     let value = e.target.value;
     let newState = {};
     newState[formInput] = value;
     this.setState(newState);
-    console.log(e.target.dataset.forminput, e.target.value);
   }
 
+
+  //NEEDS FORM VALIDATION
+  //maybe in handleForm
   handleSubmit(e) {
     e.preventDefault();
+    //send a post request to the client server with the form values tracked in state
+    axios({
+      method: 'post',
+      url: '/sessions'
+    })
+      .then((res) => console.log(res));
+    //once the session is submitted I'll use handlePopup to close the popup and clear the state
+    this.handlePopup();
     console.log(e);
   }
 
   render() {
+    //an object that allows me to pass this portion of state as props without individually declaring them
     let inputs ={
       date: this.state.date,
       category: this.state.category,
@@ -61,11 +76,11 @@ class Sessions extends React.Component {
     return (
       <div>
           <NavButton />
-          <span onClick={this.state.popup ? null : this.handleSession}>Add Session Button</span>
+          <span onClick={this.state.popup ? null : this.handlePopup}>Add Session Button</span>
         {/* the session editor modal will go here as a conditional render based on a state variable. th
         the state variable will be controlled by the add session button
         set the css so the modal is indeed a popup. */}
-        {this.state.popup ? <SessionPopup inputs={inputs} handleSubmit={this.handleSubmit} handleSession={this.handleSession} handleForm={this.handleForm} /> : null}
+        {this.state.popup ? <SessionPopup inputs={inputs} handleSubmit={this.handleSubmit} handlePopup={this.handlePopup} handleForm={this.handleForm} /> : null}
         {/* users will be able to click the session tile to view the full session tile including notes etc
         they will also have the option to edit the session notes while in this view */}
         <SessionTile />
