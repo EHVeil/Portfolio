@@ -8,7 +8,7 @@ class Sessions extends React.Component {
     super(props),
     this.state = {
       popup: false,
-      name: '',
+      date: '',
       category: '',
       activity: '',
       length: ''
@@ -20,11 +20,20 @@ class Sessions extends React.Component {
 
 
   handleSession(e) {
-    console.log(e.target.dataset.action);
     this.setState(pState => {
       //toggles the popup
       return { popup: !pState.popup }
-    })
+    }, () => {
+      //if the popup state is changed to false this clears the form and its state
+      if (!this.state.popup) {
+        this.setState({
+          date: '',
+          category: '',
+          activity: '',
+          length: ''
+        })
+      }
+    });
   }
 
   handleForm(e) {
@@ -43,7 +52,7 @@ class Sessions extends React.Component {
 
   render() {
     let inputs ={
-      name: this.state.name,
+      date: this.state.date,
       category: this.state.category,
       activity: this.state.activity,
       length: this.state.length
@@ -52,7 +61,7 @@ class Sessions extends React.Component {
     return (
       <div>
           <NavButton />
-          <span data-action="seshPopupOpen" onClick={this.handleSession}>Add Session Button</span>
+          <span onClick={this.state.popup ? null : this.handleSession}>Add Session Button</span>
         {/* the session editor modal will go here as a conditional render based on a state variable. th
         the state variable will be controlled by the add session button
         set the css so the modal is indeed a popup. */}
