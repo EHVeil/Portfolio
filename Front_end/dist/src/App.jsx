@@ -12,18 +12,22 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
+    //errorElement:
   },
   {
     path: "/timer",
     element: <SessionTimer />
+    //errorElement:
   },
   {
     path: "/sessions",
     element: <Sessions />,
+    //errorElement:
   },
   {
     path: "/statistics",
     element: <StatisticsView />,
+    //errorElement:
   }
 ])
 
@@ -32,7 +36,9 @@ const router = createBrowserRouter([
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      user: 'Thomas'
+    };
   }
   render() {
     return (

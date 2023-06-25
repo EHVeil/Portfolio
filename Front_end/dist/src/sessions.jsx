@@ -15,11 +15,28 @@ class Sessions extends React.Component {
       length: '',
       sessions: []
     }
+    this.getSessions = this.getSessions.bind(this);
     this.handlePopup = this.handlePopup.bind(this);
     this.handleForm = this.handleForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(e) {
+    //activate get sessions
+    console.log(this.props);
+  }
+
+  getSessions(e) {
+     //make a get request to the server for all of the current users sessions
+     axios({
+      method: 'get',
+      url: '/sessions',
+      data: {
+        user: this.props.user
+      }
+     })
+      .then((res) => console.log(res))
+  }
 
   handlePopup(e) {
     this.setState(pState => {
