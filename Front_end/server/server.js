@@ -7,6 +7,9 @@ const client = require('./mongo.js');
 app.use(express.static(__dirname + '/../dist'));
 
 
+//provide a secure connection over SSL to keep sessions safe
+//
+
 app.get('*', (req, res) => {
   res.send(`
     <!DOCTYPE html>
