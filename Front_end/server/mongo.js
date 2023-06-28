@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 mongoose.connect('mongodb://localhost:27017/tenKdb');
 
 //id field is automatically created in the schema and populated with the objectId type.
