@@ -1,0 +1,27 @@
+{
+  "name": "tenk-service",
+  "version": "1.0.0",
+  "description": "The back end for 10,000 hours",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "server": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EHVeil/Portfolio.git"
+  },
+  "author": "Eli Veilleux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EHVeil/Portfolio/issues"
+  },
+  "homepage": "https://github.com/EHVeil/Portfolio#readme",
+  "dependencies": {
+    "connect-mongo": "^5.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.3.1",
+    "nodemon": "^2.0.22"
+  }
+}
