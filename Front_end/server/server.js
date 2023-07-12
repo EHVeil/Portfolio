@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const mongo = require('./mongo.js')
 const port = 3000;
 
 app.use(express.static(__dirname + '/../dist'));
@@ -28,11 +29,13 @@ app.get('*', (req, res) => {
 
 //provide a secure connection over SSL to keep sessions safe
 
-app.get('/', (req, res) => {
+app.post('/auth', (req, res) => {
+  //send a request to the db
+  //if the username and password match a username and password in the db then send a success code with a message to the client
+  //if the username and password dont match any users in the db then send an error message to the client with a message
+  //
 
 });
-
-
 
 app.get('/sessions', (req, res) => {
   //retrieve all the practice sessions from a given user and send the practice sessions back to the client to be rendered in the sessions view.

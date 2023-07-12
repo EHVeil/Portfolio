@@ -75,7 +75,8 @@ class Sessions extends React.Component {
       method: 'post',
       url: '/sessions'
     })
-      .then((res) => console.log(res));
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
     //once the session is submitted I'll use handlePopup to close the popup and clear the state
     this.handlePopup();
     console.log(e);

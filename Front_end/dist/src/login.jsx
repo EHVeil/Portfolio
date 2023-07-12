@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Login extends React.Component {
   constructor(props) {
@@ -32,7 +33,20 @@ class Login extends React.Component {
 handleLogin(e) {
   e.preventDefault();
   console.log('login initiated');
-
+  //take the username and password from state and send it to the server
+  axios({
+    method: 'post',
+    url: '/auth'
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  //wait for the server response
+  //if the server responds with an ok redirect the user to the sessions page
+  //if the server responds with a negative show the user the error message
 }
 
 handleForm(e) {
@@ -42,7 +56,6 @@ handleForm(e) {
   let input = e.target.value;
   newState[field] = input;
   this.setState(newState);
-
 }
 
   render() {
