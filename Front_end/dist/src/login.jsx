@@ -7,6 +7,8 @@ class Login extends React.Component {
       username: '',
       password: ''
     }
+    this.handleForm = this.handleForm.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
 //step 1: client sign up
@@ -27,13 +29,29 @@ class Login extends React.Component {
 //attach session access token from the cookie to every req and res,
 //this will allow the client to access any user specific info
 
+handleLogin(e) {
+  e.preventDefault();
+  console.log('login initiated');
+
+}
+
+handleForm(e) {
+  console.log('field:', e.target.dataset.field, ', value:', e.target.value);
+  let newState = {};
+  let field = e.target.dataset.field;
+  let input = e.target.value;
+  newState[field] = input;
+  this.setState(newState);
+
+}
+
   render() {
     return (
       <div>
         <form>
-          <input placeholder="Username"></input>
-          <input placeholder="Password"></input>
-          <input type="submit" />
+          <input data-field="username" onChange={this.handleForm} placeholder="Username"></input>
+          <input data-field="password" onChange={this.handleForm} placeholder="Password"></input>
+          <input onClick={this.handleLogin} type="submit" />
         </form>
       </div>
     )

@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/sessions",
-    element: <Sessions loader={}/>,
+    element: <Sessions/>,
     //errorElement:
   },
   {
