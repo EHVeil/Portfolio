@@ -14,12 +14,12 @@ app.post('/auth', async (req, res) => {
   //check user object against db
   const match = await aMongo.authenticate(req.body);
   //if all information matches a user send back a success code and a message
-  if (match) {
-
-  } else {
-
-  }
   console.log('match:', match);
+  if (match) {
+    res.send('login successful')
+  } else {
+    res.send('login failed');
+  }
   //if there is no match send back an error code and a message
 
 });

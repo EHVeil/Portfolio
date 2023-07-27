@@ -41,14 +41,14 @@ handleLogin(e) {
     data: user
   })
     .then((res) => {
+      //if the server responds with an ok redirect the user to the sessions page
       console.log(res);
     })
     .catch((err) => {
+      //if the server responds with a negative show the user the error message
       console.log(err);
     })
   //wait for the server response
-  //if the server responds with an ok redirect the user to the sessions page
-  //if the server responds with a negative show the user the error message
 }
 
 handleForm(e) {

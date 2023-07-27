@@ -39,13 +39,12 @@ app.post('/auth', (req, res) => {
   })
   .then((data) => {
     console.log('logged in');
-    res.send(data);
+    res.status(200).send(data);
   })
   .catch((err) => {
-    console.log('rejected');
-    res.send(err);
+    console.log(err);
+    res.status(403).send(err);
   })
-  console.log(req.body);
   //res.send('received');
   //if the username and password match a username and password in the db then send a success code with a message to the client
   //if the username and password dont match any users in the db then send an error message to the client with a message
