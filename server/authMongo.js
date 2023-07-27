@@ -15,9 +15,13 @@ const User = mongoose.model('User', userSchema);
 async function authenticate(user) {
   //check for users with the same username and password
   const userMatch = await User.find({username: user.username, password: user.password});
-  console.log(userMatch);
-  //if a match is found return true
 
+  //if a match is found return true
+  if(userMatch[0]) {
+    return true;
+  } else {
+    return false;
+  }
   //if none are found return false
 };
 

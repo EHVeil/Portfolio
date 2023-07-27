@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "webpack-cli --mode development --watch",
-    "server": "nodemon server/server.js"
+    "server": "nodemon server/server.js",
+    "dbServer": "nodemon server/dbServer.js"
   },
   "repository": {
     "type": "git",

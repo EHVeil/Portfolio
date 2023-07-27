@@ -37,8 +37,14 @@ app.post('/auth', (req, res) => {
     url: 'http://localhost:4000/auth',
     data: req.body
   })
-  .then()
-  .catch()
+  .then((data) => {
+    console.log('logged in');
+    res.send(data);
+  })
+  .catch((err) => {
+    console.log('rejected');
+    res.send(err);
+  })
   console.log(req.body);
   //res.send('received');
   //if the username and password match a username and password in the db then send a success code with a message to the client
