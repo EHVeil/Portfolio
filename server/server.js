@@ -30,7 +30,7 @@ app.get('*', (req, res) => {
 
 //provide a secure connection over SSL to keep sessions safe
 
-app.post('/auth', (req, res) => {
+app.post('/', (req, res) => {
   //send a request to the db server
   axios({
     method: 'post',
@@ -38,13 +38,12 @@ app.post('/auth', (req, res) => {
     data: req.body
   })
   .then((data) => {
-    console.log('logged in, port 3000');
-    console.log(data.data);
-    res.status(200).send(data.data);
+      console.log('logged in, port 3000');
+      res.status(200).send(data.data);
   })
   .catch((err) => {
-    console.log(err);
-    res.status(403).send(err);
+    console.log('login failed, port 3000');
+    res.status(401).send(err);
   })
   //res.send('received');
   //if the username and password match a username and password in the db then send a success code with a message to the client

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Form } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -32,12 +33,11 @@ class Login extends React.Component {
 
 handleLogin(e) {
   e.preventDefault();
-  console.log('login initiated');
   const user = this.state;
   //take the username and password from state and send it to the server
   axios({
     method: 'post',
-    url: '/auth',
+    url: '/',
     data: user
   })
     .then((res) => {
@@ -62,11 +62,12 @@ handleForm(e) {
   render() {
     return (
       <div>
-        <form>
+        <Form>
           <input data-field="username" onChange={this.handleForm} placeholder="Username"></input>
           <input data-field="password" onChange={this.handleForm} placeholder="Password"></input>
           <input onClick={this.handleLogin} type="submit" />
-        </form>
+        </Form>
+        {/* Create a ternary here that will display the error message if a user fails to login, control with state variable */}
       </div>
     )
   }

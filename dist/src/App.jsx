@@ -8,10 +8,15 @@ import Sessions from './sessions.jsx';
 import StatisticsView from './statistics.jsx';
 import Login from './login.jsx';
 
+async function loginAction({params, request}) {
+  console.log('event');
+}
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
+    action: loginAction,
     //errorElement:
   },
   {
