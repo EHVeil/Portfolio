@@ -16,9 +16,9 @@ app.post('/auth', async (req, res) => {
   //if all information matches a user send back a success code and a message
   console.log('match:', match);
   if (match) {
-    res.send('login successful')
+    res.send('login successful, port 4000')
   } else {
-    res.send('login failed');
+    res.send('login failed, port 4000');
   }
   //if there is no match send back an error code and a message
 

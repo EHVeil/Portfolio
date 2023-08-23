@@ -38,8 +38,9 @@ app.post('/auth', (req, res) => {
     data: req.body
   })
   .then((data) => {
-    console.log('logged in');
-    res.status(200).send(data);
+    console.log('logged in, port 3000');
+    console.log(data.data);
+    res.status(200).send(data.data);
   })
   .catch((err) => {
     console.log(err);
