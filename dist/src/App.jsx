@@ -2,6 +2,8 @@ import React from 'react';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import axios from 'axios';
+import { redirect } from 'react-router-dom';
 //Components
 import SessionTimer from './sessionTimer.jsx';
 import Sessions from './sessions.jsx';
@@ -9,7 +11,25 @@ import StatisticsView from './statistics.jsx';
 import Login from './login.jsx';
 
 async function loginAction({params, request}) {
-  console.log('event');
+  let formData = await request.formData();
+  let user = {
+    username: formData.get("username"),
+    password: formData.get("password")
+  }
+  try {
+    var response = await axios({
+      method: 'post',
+      url: '/',
+      data: user
+    })
+  } catch (err) {
+    console.log(err);
+  }
+  if (response.status == 200) {
+    return redirect("/timer")
+  }
+
+  return null;
 }
 
 const router = createBrowserRouter([

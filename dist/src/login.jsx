@@ -32,7 +32,7 @@ class Login extends React.Component {
 //this will allow the client to access any user specific info
 
 handleLogin(e) {
-  e.preventDefault();
+  // e.preventDefault();
   const user = this.state;
   //take the username and password from state and send it to the server
   axios({
@@ -62,10 +62,10 @@ handleForm(e) {
   render() {
     return (
       <div>
-        <Form>
-          <input data-field="username" onChange={this.handleForm} placeholder="Username"></input>
-          <input data-field="password" onChange={this.handleForm} placeholder="Password"></input>
-          <input onClick={this.handleLogin} type="submit" />
+        <Form method="post" action="/">
+          <input type="text" name="username" placeholder="Username"></input>
+          <input type="text" name="password" placeholder="Password"></input>
+          <button type="submit">Login</button>
         </Form>
         {/* Create a ternary here that will display the error message if a user fails to login, control with state variable */}
       </div>
