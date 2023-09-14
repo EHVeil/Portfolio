@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NavButton from './navButton.jsx';
 
+//TODO:
+//if a user tries to click into another view while the timer is running, verify the action with the user via popup
+//when the user clicks reset confirm the action via a popup
 
 function SessionTimer (props) {
   const [time, setTime] = useState(0);

@@ -8,6 +8,7 @@ app.use(express.static(__dirname + '/../dist'));
 app.use(express.json());
 
 app.get('*', (req, res) => {
+  //an html mockup of your index file is required for smooth navigation in react router
   res.send(`
     <!DOCTYPE html>
     <html lang="en">
