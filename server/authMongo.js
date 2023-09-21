@@ -19,9 +19,8 @@ async function authenticate(user) {
   //if a match is found return true
   if(userMatch[0]) {
     return true;
-  } else {
-    return false;
   }
+  return false;
   //if none are found return false
 };
 
